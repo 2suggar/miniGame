@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="miniGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="42m-Vg-Cxh">
+                                <rect key="frame" x="56" y="322.5" width="302" height="101"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="101" id="DKj-Kr-NhU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="24"/>
+                                <state key="normal" title="ИГРАТЬ"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="GOb-kM-Vz2" kind="presentation" identifier="play" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="e3G-cu-xhh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2TX-Fq-aOg">
+                                <rect key="frame" x="56" y="445.5" width="302" height="101"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="101" id="nkg-4s-7Rn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="24"/>
+                                <state key="normal" title="РЕЗУЛЬТАТЫ"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showResults:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IAr-fF-eVI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="42m-Vg-Cxh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="56" id="6Fr-oo-CTN"/>
+                            <constraint firstItem="42m-Vg-Cxh" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-80" id="DL5-fB-3gQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="42m-Vg-Cxh" secondAttribute="trailing" constant="56" id="FDs-rj-riv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2TX-Fq-aOg" secondAttribute="trailing" constant="56" id="SkG-Ub-nFY"/>
+                            <constraint firstItem="2TX-Fq-aOg" firstAttribute="top" secondItem="42m-Vg-Cxh" secondAttribute="bottom" constant="22" id="avW-ys-PNH"/>
+                            <constraint firstItem="2TX-Fq-aOg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="56" id="l0z-eh-zwv"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="93.75"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="inG-7J-yDI">
+            <objects>
+                <viewController id="GOb-kM-Vz2" customClass="GameViewController" customModule="miniGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lI4-CP-yv5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Up-6N-sVh">
+                                <rect key="frame" x="20" y="409" width="182" height="120"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="I1e-8a-cro"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="18"/>
+                                <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
+                                <state key="normal" title="1"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="answerTaped:" destination="GOb-kM-Vz2" eventType="touchUpInside" id="2tn-Rv-0X2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8y3-bj-o3e">
+                                <rect key="frame" x="216" y="409" width="182" height="120"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="E3u-Ne-ZBt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="18"/>
+                                <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
+                                <state key="normal" title="2"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="answerTaped:" destination="GOb-kM-Vz2" eventType="touchUpInside" id="aap-6z-nwm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9aQ-Py-P1O">
+                                <rect key="frame" x="16" y="545" width="184" height="120"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="18"/>
+                                <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
+                                <state key="normal" title="3"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="answerTaped:" destination="GOb-kM-Vz2" eventType="touchUpInside" id="4di-x5-ioZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBd-0B-lMU">
+                                <rect key="frame" x="214" y="545" width="184" height="120"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="18"/>
+                                <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
+                                <state key="normal" title="4"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="answerTaped:" destination="GOb-kM-Vz2" eventType="touchUpInside" id="ZlQ-bX-zVH"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="вопрос" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bj0-Ke-KPG">
+                                <rect key="frame" x="22" y="227" width="370" height="132"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="132" id="ab2-jI-DH0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iRF-q4-68M"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5Up-6N-sVh" firstAttribute="top" secondItem="Bj0-Ke-KPG" secondAttribute="bottom" constant="50" id="0yZ-Yh-Yla"/>
+                            <constraint firstItem="8y3-bj-o3e" firstAttribute="top" secondItem="Bj0-Ke-KPG" secondAttribute="bottom" constant="50" id="2Ea-Yv-5zd"/>
+                            <constraint firstItem="iRF-q4-68M" firstAttribute="trailing" secondItem="XBd-0B-lMU" secondAttribute="trailing" constant="16" id="4tJ-Da-LE0"/>
+                            <constraint firstItem="XBd-0B-lMU" firstAttribute="top" secondItem="8y3-bj-o3e" secondAttribute="bottom" constant="16" id="9I5-Z2-wB6"/>
+                            <constraint firstItem="5Up-6N-sVh" firstAttribute="leading" secondItem="iRF-q4-68M" secondAttribute="leading" constant="20" id="CHz-M1-96s"/>
+                            <constraint firstItem="Bj0-Ke-KPG" firstAttribute="leading" secondItem="iRF-q4-68M" secondAttribute="leading" constant="22" id="CzV-N8-txK"/>
+                            <constraint firstItem="Bj0-Ke-KPG" firstAttribute="centerX" secondItem="iRF-q4-68M" secondAttribute="centerX" id="DEh-lS-LLE"/>
+                            <constraint firstItem="9aQ-Py-P1O" firstAttribute="top" secondItem="5Up-6N-sVh" secondAttribute="bottom" constant="16" id="DgL-0B-xZ5"/>
+                            <constraint firstItem="XBd-0B-lMU" firstAttribute="width" secondItem="9aQ-Py-P1O" secondAttribute="width" id="H3Q-ca-pNy"/>
+                            <constraint firstItem="XBd-0B-lMU" firstAttribute="leading" secondItem="9aQ-Py-P1O" secondAttribute="trailing" constant="14" id="KvX-P0-PiR"/>
+                            <constraint firstItem="8y3-bj-o3e" firstAttribute="leading" secondItem="5Up-6N-sVh" secondAttribute="trailing" constant="14" id="NUG-75-HXa"/>
+                            <constraint firstItem="9aQ-Py-P1O" firstAttribute="height" secondItem="5Up-6N-sVh" secondAttribute="height" id="Qay-T8-Cya"/>
+                            <constraint firstItem="XBd-0B-lMU" firstAttribute="height" secondItem="8y3-bj-o3e" secondAttribute="height" id="VbX-jS-Bgb"/>
+                            <constraint firstItem="iRF-q4-68M" firstAttribute="trailing" secondItem="Bj0-Ke-KPG" secondAttribute="trailing" constant="22" id="dLA-gE-NnV"/>
+                            <constraint firstItem="9aQ-Py-P1O" firstAttribute="leading" secondItem="iRF-q4-68M" secondAttribute="leading" constant="16" id="hD9-w8-XWJ"/>
+                            <constraint firstItem="8y3-bj-o3e" firstAttribute="width" secondItem="5Up-6N-sVh" secondAttribute="width" id="nM3-K5-Epa"/>
+                            <constraint firstItem="Bj0-Ke-KPG" firstAttribute="centerY" secondItem="iRF-q4-68M" secondAttribute="centerY" constant="-160" id="wxm-gi-dMH"/>
+                            <constraint firstItem="iRF-q4-68M" firstAttribute="trailing" secondItem="8y3-bj-o3e" secondAttribute="trailing" constant="16" id="xgu-Po-uOy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="v8Q-tr-9f6"/>
+                    <connections>
+                        <outlet property="answer1" destination="5Up-6N-sVh" id="9AD-Cx-0bP"/>
+                        <outlet property="answer2" destination="8y3-bj-o3e" id="1fC-jZ-4fg"/>
+                        <outlet property="answer3" destination="9aQ-Py-P1O" id="Gtb-Q1-gME"/>
+                        <outlet property="answer4" destination="XBd-0B-lMU" id="suj-fJ-x2F"/>
+                        <outlet property="questLabel" destination="Bj0-Ke-KPG" id="gl2-E0-iGg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qkn-Nk-xG4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1016" y="94"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
