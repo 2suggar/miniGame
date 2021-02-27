@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Question {
+struct Question: Codable {
     var quest: String?
     var answers: [String]?
     var correctAnswer: String?
