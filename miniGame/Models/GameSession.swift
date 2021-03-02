@@ -35,10 +35,17 @@ class GameSession {
     var quests: [Question]
     
     var questsCount = defaultQuests.count + userQuests.count
-    var correctCount = 0
+    var correctCount = 0 {
+        didSet {
+            progress.value = (correct: correctCount,
+                              progress: Int(Double(correctCount)/Double(questsCount) * 100))
+        }
+    }
     
     var currentQuestNumber = 0
     var currentQuestion: Question?
+    
+    var progress: Observable<(correct: Int, progress: Int)> = Observable<(correct: Int, progress: Int)>(value: (correct: 0, progress: 0))
     
     init(with strategy: CreateOrderStrategy) {
         quests = strategy.createOrder(with: defaultQuests + userQuests)

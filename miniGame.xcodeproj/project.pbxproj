@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		290B74E825EE4A4700F5BCAA /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290B74E725EE4A4700F5BCAA /* Observable.swift */; };
 		2962B0E725E643AC009E4027 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2962B0E625E643AC009E4027 /* AppDelegate.swift */; };
 		2962B0E925E643AC009E4027 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2962B0E825E643AC009E4027 /* SceneDelegate.swift */; };
 		2962B0EB25E643AC009E4027 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2962B0EA25E643AC009E4027 /* ViewController.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		290B74E725EE4A4700F5BCAA /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		2962B0E325E643AC009E4027 /* miniGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = miniGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2962B0E625E643AC009E4027 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2962B0E825E643AC009E4027 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		290B74E625EE4A2800F5BCAA /* ObserverPattern */ = {
+			isa = PBXGroup;
+			children = (
+				290B74E725EE4A4700F5BCAA /* Observable.swift */,
+			);
+			path = ObserverPattern;
+			sourceTree = "<group>";
+		};
 		2962B0DA25E643AC009E4027 = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +86,7 @@
 		2962B0E525E643AC009E4027 /* miniGame */ = {
 			isa = PBXGroup;
 			children = (
+				290B74E625EE4A2800F5BCAA /* ObserverPattern */,
 				2997963F25EA956500B71662 /* StrategyPattern */,
 				2997963925EA7B5700B71662 /* Caretakers */,
 				29BDDB3925E6C0EA009BE81F /* Models */,
@@ -205,6 +216,7 @@
 				2962B10B25E6961F009E4027 /* ResultCaretaker.swift in Sources */,
 				29A1335225E7B67D0015636F /* NewQuestViewController.swift in Sources */,
 				2962B0EB25E643AC009E4027 /* ViewController.swift in Sources */,
+				290B74E825EE4A4700F5BCAA /* Observable.swift in Sources */,
 				2962B0FF25E65199009E4027 /* Game.swift in Sources */,
 				2962B0FC25E650EB009E4027 /* Question.swift in Sources */,
 				29A7C46125E7E386009CBB4D /* CustomizationViewController.swift in Sources */,

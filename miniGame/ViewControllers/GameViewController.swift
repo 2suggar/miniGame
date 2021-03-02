@@ -20,6 +20,14 @@ class GameViewController: UIViewController {
     
     var currentQuest: Question?
     
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    deinit {
+        Game.shared.session?.progress.removeObserver(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +39,12 @@ class GameViewController: UIViewController {
         answer2.titleLabel?.numberOfLines = 3
         answer3.titleLabel?.numberOfLines = 3
         answer4.titleLabel?.numberOfLines = 3
+        
+        infoLabel.text = "Вопрос №0\nПрогресс: 0%"
+        
+        Game.shared.session?.progress.addObserver(self, closure: { [weak self] (correct, progress) in
+            self?.infoLabel.text = "Вопрос №\(correct + 1)\nПрогресс: \(progress)%"
+        })
     }
     
     @IBAction func answerTaped(_ sender: UIButton) {
@@ -59,9 +73,9 @@ class GameViewController: UIViewController {
             return
         }
         
-        let progress = gameDelegate?.getCorrectAnswersCount() ?? (correct: 0, all: 0)
-        
-        infoLabel.text = "Вопрос №\(progress.correct + 1)\nПрогресс: \(String(format: "%0.0f", Double(progress.correct) / Double(progress.all) * 100))%"
+//        let progress = gameDelegate?.getCorrectAnswersCount() ?? (correct: 0, all: 0)
+//
+//        infoLabel.text = "Вопрос №\(progress.correct + 1)\nПрогресс: \(String(format: "%0.0f", Double(progress.correct) / Double(progress.all) * 100))%"
         
         questLabel.text = quest.quest
         answer1.setTitle(quest.answers?[0] ?? "", for: .normal)
