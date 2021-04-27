@@ -7,7 +7,7 @@
 
 import Foundation
 
-private let quests: [Question] = [
+let defaultQuests: [Question] = [
     Question(quest: "В какой из этих столиц бывших союзных республик раньше появилось метро?",
              answers: ["Тбилиси", "Ереван", "Баку", "Минск"],
              correctAnswer: "Тбилиси"),
@@ -25,14 +25,30 @@ private let quests: [Question] = [
              correctAnswer: "Георгий")
 ]
 
+var userQuests: [Question] = [] {
+    didSet {
+        QuestionsCaretaker().saveQuestions(userQuests)
+    }
+}
+
 class GameSession {
-    var questsCount = 5
-    var correctCount = 0
+    var quests: [Question]
+    
+    var questsCount = defaultQuests.count + userQuests.count
+    var correctCount = 0 {
+        didSet {
+            progress.value = (correct: correctCount,
+                              progress: Int(Double(correctCount)/Double(questsCount) * 100))
+        }
+    }
     
     var currentQuestNumber = 0
     var currentQuestion: Question?
     
-    init() {
+    var progress: Observable<(correct: Int, progress: Int)> = Observable<(correct: Int, progress: Int)>(value: (correct: 0, progress: 0))
+    
+    init(with strategy: CreateOrderStrategy) {
+        quests = strategy.createOrder(with: defaultQuests + userQuests)
         currentQuestion = quests[0]
     }
     
